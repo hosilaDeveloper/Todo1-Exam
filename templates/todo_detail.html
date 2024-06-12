@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="card" style="width: 18rem;">
+      {% for todo in todos %}
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.title }}</h5>
+    <p class="card-text">{{ todo.description }}</p>
+      <button type="button" class="btn btn-success"><a href="/update/{{ todo.id }}" class="card-link" style="color: wheat">Edit</a></button>
+      <button style="margin-left: 20px" type="button" class="btn btn-danger"><a href="/delete/{{ todo.id }}" class="card-link" style="color: azure">Delete</a></button>
+  </div>
+      {% endfor %}
+</div>
+
+{% endblock %}
